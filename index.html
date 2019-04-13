@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test Page</title>
+  <style>
+    body {
+      background: midnightblue;
+      color: mintcream;
+      text-align: center;
+    }
+    h1 {
+      color: coral;
+    }
+    a {
+      text-decoration: none;
+      color: turquoise;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    Welcome to shoddy GO WIKI
+  </h1>
+  <p>new page?
+      <form action="/edit/">
+        <input name="page" type="text">
+        <button type="submit" id="sbmt">NEW PAGE!</button>
+      </form>
+    </p>
+    <script>
+      let form = document.forms[0]
+      let input = form.page
+      input.addEventListener("keyup", (e) => {
+        form.setAttribute('action', "/edit/" + e.target.value)
+      })
+    </script>
+</body>
+</html>
